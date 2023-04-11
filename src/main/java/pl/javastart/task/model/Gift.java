@@ -5,8 +5,13 @@ import pl.javastart.task.model.Ticket;
 import static pl.javastart.task.model.Standard.LOGISTICS_PRICE;
 
 public class Gift extends Ticket {
-    public Gift(String eventName, Address address, double price, String type, double discount) {
-        super(eventName, address, price, type, discount);
+    public Gift(String eventName, Address address, double price, double discount) {
+        super(eventName, address, price, discount);
+    }
+
+    @Override
+    public String getType() {
+        return "Gift";
     }
 
     @Override

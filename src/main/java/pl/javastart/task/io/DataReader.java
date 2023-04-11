@@ -1,6 +1,8 @@
 package pl.javastart.task.io;
 
 import pl.javastart.task.model.Address;
+import pl.javastart.task.model.Gift;
+import pl.javastart.task.model.Online;
 import pl.javastart.task.model.Ticket;
 
 import java.util.Scanner;
@@ -28,7 +30,12 @@ public class DataReader {
         System.out.println("Podaj zniżkę:");
         double discount = scanner.nextInt();;
         scanner.nextLine();
-        return new Ticket(eventName, address, price, type, discount);
+        if (type.equals("Online"))
+        return new Online(eventName, address, price, discount);
+        else if (type.equals("Gift"))
+            return new Gift(eventName, address, price, discount);
+        else
+            return new Ticket(eventName, address, price, discount);
     }
 }
 

@@ -5,8 +5,13 @@ import pl.javastart.task.model.Ticket;
 public class Standard extends Ticket {
     public static  final double LOGISTICS_PRICE = 5;
 
-    public Standard(String eventName, Address address, double price, String type, double discount) {
-        super(eventName, address, price, type, discount);
+    public Standard(String eventName, Address address, double price,  double discount) {
+        super(eventName, address, price,  discount);
+    }
+
+    @Override
+    public String getType() {
+        return "Standard";
     }
 
     @Override

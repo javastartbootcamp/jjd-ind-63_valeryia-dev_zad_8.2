@@ -4,15 +4,13 @@ public class Ticket {
     private String eventName;
     private Address address;
     private double price;
-    private String type;
     private double discount;
     private int id = 0;
 
-    public Ticket(String eventName, Address address, double price, String type, double discount) {
+    public Ticket(String eventName, Address address, double price, double discount) {
         this.eventName = eventName;
         this.address = address;
         this.price = price;
-        this.type = type;
         this.discount = discount;
         this.id++;
     }
@@ -42,12 +40,9 @@ public class Ticket {
     }
 
     public String getType() {
-        return type;
+        return "baza";
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public int getId() {
         return id;
@@ -74,7 +69,7 @@ public class Ticket {
     }
 
     public String printInfo() {
-        return "Bilet " + type + ": cena podstawowa " + price + "zł, zniżka " + getDiscountInfo()
+        return "Bilet " + getType() + ": cena podstawowa " + price + "zł, zniżka " + getDiscountInfo()
                + ", cena finalna wyniesie ";
     }
 }
